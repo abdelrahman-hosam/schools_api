@@ -1,6 +1,6 @@
 const mysql = require('mysql2')
-
-const db = mysql.createConnection('mysql://root:kWcsBLrfknlkIHTXgSAsKPWNQGQakxll@mysql.railway.internal:3306/railway')
+const dotenv = require('dotenv')
+const db = mysql.createConnection(process.env.DATABASE_URL)
 db.connect((err)=> {
     if(err){
         console.log(err)
